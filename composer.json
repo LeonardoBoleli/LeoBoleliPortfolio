@@ -1,0 +1,27 @@
+{
+    "name": "phpmailer/phpmailer",
+    "description": "Estudando o mailer",
+    "minimun-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Leonardo Boleli Silva",
+            "email": "leo.boleli@gmail.com",
+            "role": "Developer"
+        }    
+    ],
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "autoload": {
+        "psr-4": {
+            "Source\\": "source/"
+        },
+        "files": [
+            "source/Config.php"
+        ]
+    },
+    "require": {
+        "phpmailer/phpmailer": "^6.5"
+    }
+}
