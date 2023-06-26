@@ -1,0 +1,3 @@
+[build]
+  command = "php index.php" # Comando para executar o PHP e iniciar o seu site
+  publish = "public" # Pasta onde os arquivos construídos serão colocados
