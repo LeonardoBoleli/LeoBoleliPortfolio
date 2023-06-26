@@ -20,8 +20,5 @@
         "files": [
             "source/Config.php"
         ]
-    },
-    "require": {
-        "phpmailer/phpmailer": "^6.5"
     }
 }
