@@ -1,7 +1,7 @@
 {
-    "name": "phpmailer/phpmailer",
+    "name": "leoboleli/portfolio",
     "description": "Estudando o mailer",
-    "minimum-stability": "stable",
+    "minimun-stability": "stable",
     "license": "MIT",
     "authors": [
         {
