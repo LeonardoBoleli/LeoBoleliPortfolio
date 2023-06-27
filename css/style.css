@@ -707,7 +707,7 @@ a:hover{
     justify-content: center;
     align-items: center;
     background-color: var(--body-color);
-    min-height: 70vh;
+    min-height: auto;
 }
 
 .container_portfolio{
@@ -946,7 +946,7 @@ a:hover{
     text-align: center;
     color: #fff;
     padding: 160px 0;
-    background-image: url(../Imagens/destaques.jpg);
+    background-image: url(../Imagens/destaques2.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
