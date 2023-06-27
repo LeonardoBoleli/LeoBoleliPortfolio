@@ -224,5 +224,63 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
 
+const submit = document.getElementsByClassName("contact_form")[0]
+/*
+submit.addEventListener('submit', (e) =>{
+    e.preventDefault();
+    console.log("entrei")
+    enviarFormulario();
+    console.log("sai")
+})
+*/
+function enviarFormulario() {
+    let nome = document.getElementById("nome").value;
+    let email = document.getElementById("email").value;
+    let assunto = document.getElementById("assunto").value;
+    let mensagem = document.getElementById("mensagem").value;
+    let data = new Date();
 
+    let horas = data.getHours();
+    let minutos = data.getMinutes();
+    let segundos = data.getSeconds();
+    let dia = data.getDate();
+    let mes = data.getMonth() + 1;
+    let ano = data.getFullYear();
+
+    horas = horas < 10 ? '0' + horas : horas;
+    minutos = minutos < 10 ? '0' + minutos : minutos;
+    segundos = segundos < 10 ? '0' + segundos : segundos;
+    dia = dia < 10 ? '0' + dia : dia;
+    mes = mes < 10 ? '0' + mes : mes;
+
+    data = horas + ':' + minutos + ':' + segundos + ' | ' + dia + '-' + mes + '-' + ano;
+
+    let body = `
+    
+    <b>Nome:</b> ${nome}<br/> <br>
+    <b>Email:</b> ${email}<br/> <br>
+    <b>Mensagem:</b> <br><br>${mensagem}<br/><br>
+    <b>Data:</b> ${data}<br/>    
+    `
+
+  
+    // Configurar as informações do e-mail
+    Email.send({
+      SecureToken: "ee2a9ea1-e8ba-4ea9-a575-80e4d6b11b04",
+      To: "leo.boleli@gmail.com",
+      From: "asil.ebol.ls@gmail.com",
+      Subject: assunto,
+      Body: body,
+    }).then(
+      function (response) {
+        console.log("E-mail enviado com sucesso!");
+        alert("E-mail enviado com sucesso!");
+      },
+      function (error) {
+        console.error("Erro ao enviar o e-mail:", error);
+        alert("Ocorreu um erro ao enviar o e-mail. Por favor, tente novamente mais tarde.");
+      }
+    );
+  }
+  
 
