@@ -39,26 +39,6 @@ function linkAction(){
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
-/* ===================== FLECHINHA SKILLS ===================== */
-const skillsContent = document.getElementsByClassName('skills_content'),
-      skillsHeader = document.querySelectorAll('.skills_header')
-
-function toggleSkills(){
-    let itemClass = this.parentNode.className
-
-    for(i = 0; i < skillsContent.length; i++){
-        skillsContent[i].className = 'skills_content skills_close'
-        
-    }
-    if(itemClass == 'skills_content skills_close'){
-        this.parentNode.className = 'skills_content skills_open'
-    }  
-}
-
-skillsHeader.forEach((el) =>{
-    el.addEventListener('click', toggleSkills)
-});
-
 /* ===================== QUALIFICATION TABS ===================== */
 const tabs = document.querySelectorAll('[data-target]'),
       tabsContents = document.querySelectorAll('[data-content]')
@@ -134,26 +114,6 @@ let swiperDestaques = new Swiper('.mySwiper', {
       el: '.swiper-scrollbar',
     },
   });
-
-/* ===================== SWIPER TESTIMONIAL ===================== */
-let swiperTestimonial = new Swiper(".testimonial_container", {
-    
-    loop: true,
-    grabCursor: true,
-    spaceBetween: 48,
-
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-      dynamicBullets: true,
-    },
-
-    breakpoints:{
-        568:{
-            slidesPerView: 2,
-        }
-    }
-});
 
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/

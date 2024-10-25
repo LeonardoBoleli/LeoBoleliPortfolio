@@ -78,6 +78,11 @@
     }
 }
 
+.grid{
+    display: grid;
+    gap: 1.5rem;
+}
+
 /*======================== VARIÁVEIS DARK THEME ========================*/
 body.dark-theme{
     /*HSL color mode*/
@@ -284,7 +289,7 @@ a:hover{
 }
 
 .home_blob-img{
-    width: 170px;
+    width: 150px;
 }
 
 .home_data{
@@ -372,49 +377,52 @@ a:hover{
 
 .about_buttons{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-content: space-between;
+    align-items: center;
 }
 
 /*======================== SKILLS ========================*/
 .skills_container{
-    row-gap: 0;
+    display: grid;
+    grid-template-areas: 'confort desenv'
+    'carater carater';
+    justify-content: space-between;
+    justify-items: center;
+    align-content: space-between;
+}
+.skills_content{
+    margin-bottom: 5rem;
 }
 
 .skills_header{
     display: flex;
-    align-items: center;
     margin-bottom: var(--mb-2-5);
-    cursor: pointer;
+    text-align: center;
 }
 
-.skills_icon,
-.skills_arrow{
+.skills_icon{
     font-size: 2rem;
     color: var(--first-color);
 }
 
-.skills_icon{
-    margin-right: var(--mb-0-75);
-}
-
 .skills_title{
     font-size: var(--h3-font-size);
-}
-
-.skills_subtitle{
-    font-size: var(--small-font-size);
-    color: var(--text-color-light);
-}
-
-.skills_arrow{
-    margin-left: auto;
-    transition: .4s;
-}
-
-.skills_title{
-    display: flex;
     justify-content: space-between;
     margin-bottom: var(--mb-0-5);
+    width: 100%;
+}
+
+.skills_titles{    
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    border: var(--first-color) 1px solid;
+}
+
+.skills_titles:hover{
+    background-color: var(--first-color);
+    color: var(--container-color);
 }
 
 .skills_name{
@@ -422,104 +430,23 @@ a:hover{
     font-weight: var(--font-medium);
 }
 
-.skills_bar,
-.skills_percentage{
-    height: 5px;
-    border-radius: .25rem;
-}
-
-.skills_bar{
-    background-color: var(--first-color-lighter);
-}
-
-.skills_percentage{
-    display: block;
-    background-color: var(--first-color);
-}
-
-.skills_html{
-    width: 90%;
-}
-
-.skills_css{
-    width: 80%;
-}
-.skills_php{
-    width: 50%;
-}
-.skills_js{
-    width: 50%;
-}
-.skills_c{
-    width: 80%;
-}
-.skills_python{
-    width: 70%;
-}
-.skills_java{
-    width: 40%;
-}
-.skills_cs{
-    width: 30%;
-}
-.skills_cshtml{
-    width: 30%;
-}
-.skills_word{
+.skills_list{
+    grid-template-columns: max-content max-content max-content;
+    align-items: center;
+    gap: 0;
     width: 100%;
 }
-.skills_excel{
-    width: 100%;
-}
-.skills_pp{
-    width: 100%;
-}
-.skills_acces{
-    width: 30%;
-}
-.skills_pt{
-    width: 100%;
-}
-.skills_ing{
-    width: 80%;
-}
-.skills_esp{
-    width: 40%;
-}
-.skills_jap{
-    width: 15%;
-}
-.skills_equipe{
-    width: 100%;
-}
-.skills_lider{
-    width: 90%;
-}
-.skills_melhor{
-    width: 100%;
-}
-.skills_resp{
-    width: 100%;
-}
-.skills_comu{
-    width: 80%;
+
+.skills_confort{
+    grid-area: confort;
 }
 
-
-
-.skills_close .skills_list{
-    height: 0;
-    overflow: hidden;
+.skills_desenv{
+    grid-area: desenv;
 }
 
-
-.skills_open .skills_list{
-    height: max-content;
-    margin-bottom: var(--mb-2-5);
-}
-
-.skills_open .skills_arrow{
-    transform: rotate(-180deg);
+.skills_carater{
+    grid-area: carater;
 }
 
 /*======================== QUALIFICATION ========================*/
@@ -955,7 +882,7 @@ a:hover{
 .destaques_data{
     margin-left: 1.5rem;
     color: var(--text-color);
-    max-width: 100%;
+    width: auto;
     border-radius: .5rem;
 }
 
@@ -972,8 +899,7 @@ a:hover{
 }
 
 .destaques_data img{
-    
-    max-height: 800px;
+    max-height: 500px;
 }
 
 .billybuilder,
@@ -988,12 +914,11 @@ a:hover{
     border-radius: .5rem;
     box-shadow: 0 20px 50px rgba(0, 0, 0, .15);
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     flex-direction: column;
-    align-content: center;
-    justify-content: space-between;
+    align-content: flex-start;
+    justify-content: center;
     align-items: center;
-    min-width: 100%;
 }
 
 .destaques_billy-title{
@@ -1037,101 +962,6 @@ a:hover{
     background: var(--scrollbar-swiper-fundo);
 }
 
-
-
-/*======================== PROJECT IN MIND ========================*/
-.project{
-    text-align: center;
-}
-
-.project_data{
-    margin-top: 13%;
-    align-items: center;
-}
-
-.project_container{
-    border-radius: .5rem;
-}
-
-.project_bg{
-    background-color: var(--first-color);
-    border-radius: .5rem;
-}
-
-.project_title{
-    font-size: var(--h2-font-size);
-    margin-bottom: var(--mb-0-75);
-}
-
-.project_description{
-    margin-bottom: var(--mb-1-5);
-}
-
-.project_title,
-.project_description{
-    color: #FFF;
-}
-
-.project_img{
-    width: 300px;
-    justify-self: center;
-    margin-bottom: var(--mb-1-5);
-    border-radius: .5rem;
-    margin-right: 2rem;
-}
-
-/*======================== TESTIMONIAL ========================*/
-.testimonial{
-    max-height: 500px;
-}
-
-.testimonial_content{
-    max-height: 250px;
-}
-
-.testimonial_container{
-    max-height: 250px;
-}
-
-.testimonial_data,
-.testimonial_header{
-    display: flex;
-    
-}
-
-.testimonial_data{
-    justify-content: space-between;
-    margin-bottom: var(--mb-1);
-}
-
-.testimonial_img{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-right: var(--mb-0-75);
-}
-
-.testimonial_name{
-    font-size: var(--h3-font-size);
-    font-weight: var(--font-medium);
-}
-
-.testimonial_client{
-    font-size: var(--small-font-size);
-    color: var(--text-color-light);
-}
-
-.testimonial_description{
-    margin-bottom: var(--mb-2-5);
-}
-
-.testimonial_icon-star{
-    color: var(--first-color);
-}
-
-.swiper-container .swiper-pagination-testimonial{
-    bottom: 0;
-}
 
 /*======================== CONTACT ME ========================*/
 .contact_container{
@@ -1306,6 +1136,8 @@ a:hover{
 .button-flex{
     display: inline-flex;
     align-items: center;
+    margin-right: 1rem;
+    margin-top: 1rem;
 }
 
 .button-white{
@@ -1369,10 +1201,7 @@ a:hover{
     margin-right: var(--mb-1-5);
 }
 
-.grid{
-    display: grid;
-    gap: 1.5rem;
-}
+
 
 .header{
     width: 100%;
@@ -1442,15 +1271,6 @@ a:hover{
         
     }
     
-
-
-    .project_bg{
-        margin-top: 4rem;
-        padding-top: 4rem;
-    }
-    .project_img{
-        width: 200px;
-    }
     .portfolio_container{
         margin-bottom: var(--mb-3);
         padding-bottom: var(--mb-3);
@@ -1472,10 +1292,6 @@ a:hover{
 }
 
 @media screen and (min-width: 380px){
-    .project_bg{
-        margin-top: 6rem;
-        padding-top: 2rem;
-    }
     .home_blob{
         width: 230px;
     }
@@ -1502,14 +1318,9 @@ a:hover{
     .about_container,
     .skills_container,
     .portfolio_content,
-    .project_container,
     .contact_container,
     .footer_container{
         grid-template-columns: repeat(2, 1fr);
-    }
-    .project_bg{
-        margin-top: 4rem;
-        padding-top: 4rem;
     }
 
     .qualification_sections{
@@ -1638,21 +1449,6 @@ a:hover{
         align-items: center;
     }
 
-    .project{
-        text-align: initial;
-    }
-    .project_bg{
-        background: none;
-    }
-    .project_container{
-        background-color: var(--first-color);
-        padding: 3rem 2.5rem 0;
-        grid-template-columns: 1fr max-content;
-        column-gap: 3rem;
-    }
-    .project_data{
-        padding-top: 6rem;
-    }
 
     .footer_container{
         grid-template-columns: repeat(3, 1fr);
@@ -1742,15 +1538,6 @@ a:hover{
     }
     .contact_inputs{
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .project_container{
-        border-radius: 0;
-    }
-
-    .project_bg{
-        margin-top: 0;
-        padding-top: 0;
     }
 
 }
